@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Community Core — Proof of Work</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --violet-1:#0c0016;
+      --violet-2:#1a0033;
+      --violet-3:#3a0ca3;
+      --violet-4:#7209b7;
+      --violet-5:#b5179e;
+      --cyan:#4cc9f0;
+      --text:#f5f2ff;
+      --muted:#d3c3f5;
+      --card-bg: rgba(255,255,255,0.07);
+      --border: rgba(255,255,255,0.15);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial;
+      color:var(--text);
+      background: radial-gradient(1000px 600px at 20% -10%, rgba(114,9,183,0.35), transparent 60%),
+                  radial-gradient(1200px 600px at 80% 10%, rgba(181,23,158,0.3), transparent 60%),
+                  linear-gradient(135deg, var(--violet-1), var(--violet-2) 30%, var(--violet-3) 65%, var(--violet-4));
+    }
+    a{color:inherit}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    .nav{display:flex;justify-content:flex-end;gap:14px;padding:12px 0 0}
+    .nav a{font-size:13px;color:#e9dbff;text-decoration:none;opacity:.9}
+
+    .hero{padding:72px 0 40px;position:relative;}
+    .pill{display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,0.06);color:var(--muted);font-size:12px;font-weight:600;letter-spacing:.3px;text-transform:uppercase;}
+    .title{margin:14px 0 10px;font-size:40px;line-height:1.1;font-weight:800;background:linear-gradient(90deg, var(--cyan), var(--violet-5));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 12px rgba(76,201,240,0.5);}
+    .lead{color:var(--muted);max-width:720px;font-size:16px}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;border:1px solid var(--border);background:linear-gradient(135deg,#7209b7,#b5179e 60%,#4cc9f0);color:white;text-decoration:none;font-weight:700;box-shadow:0 10px 24px rgba(0,0,0,.35);transition:.25s transform,.25s box-shadow,.25s filter;}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(0,0,0,.45);filter:saturate(1.05)}
+    .btn.secondary{background:transparent;color:var(--text);backdrop-filter: blur(6px);}
+
+    .section{padding:36px 0}
+    .section h2{margin:0 0 6px;font-size:26px;background:linear-gradient(90deg,#4cc9f0,#b5179e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 10px rgba(181,23,158,0.4)}
+    .section .sub{color:var(--muted);font-size:14px;margin:0 0 14px}
+    .grid{display:grid;gap:16px}
+    .cards{grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:26px}
+    .card{background:var(--card-bg);border:1px solid var(--border);border-radius:18px;padding:18px;min-height:120px;box-shadow:0 6px 18px rgba(0,0,0,.25);backdrop-filter: blur(8px);}
+    .card h3{margin:0 0 8px;font-size:16px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+    .badge{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(180,122,255,.15);border:1px solid var(--border);font-size:11px;color:#eddcff}
+
+    .footer{margin-top:32px;padding:28px 0;border-top:1px solid var(--border);text-align:center;color:#d7c9f3;}
+    .contact{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+    .contact a{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,0.08);border:1px solid var(--border);text-decoration:none;font-weight:600;color:#f1e9ff;}
+
+    /* Glow accents for streaming */
+    .stream-core h2{font-size:28px;text-align:center;text-transform:uppercase;letter-spacing:1px;}
+    .stream-card{border:1px solid rgba(255,255,255,0.25);background:linear-gradient(145deg,rgba(114,9,183,0.3),rgba(76,201,240,0.1));box-shadow:0 0 20px rgba(181,23,158,0.5);}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <a href="#streaming">Streaming</a>
+      <a href="#industries">Industries</a>
+      <a href="#proof">Proof</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <header class="hero">
+      <span class="pill">Since 2023 • Streaming First • Confidential</span>
+      <h1 class="title">Community Core — Driving Twitch & Kick Growth Through Chat Engagement</h1>
+      <p class="lead">We specialize in keeping live streams alive. Whether Just Chatting, DJs, or immersive Roleplay, we fuel engagement, hype, and credibility that attracts viewers and keeps them watching.</p>
+      <div class="cta-row">
+        <a class="btn" href="https://calendly.com/xsyrfelix/new-meeting" target="_blank" rel="noopener">📅 Book a Call</a>
+        <a class="btn secondary" href="mailto:xsyrfelix@gmail.com">✉️ Email: xsyrfelix@gmail.com</a>
+        <a class="btn secondary" href="https://x.com/1EngageAgency" target="_blank" rel="noopener">𝕏 @1EngageAgency</a>
+      </div>
+    </header>
+
+    <section class="section stream-core" id="streaming">
+      <h2>🎥 Streaming is Our Core</h2>
+      <p class="sub" style="text-align:center">Our strongest niche: making streams feel alive, interactive, and worth following.</p>
+      <div class="grid cards">
+        <div class="card stream-card">
+          <h3>🥇 Just Chatting / IRL</h3>
+          <p><strong>Why:</strong> Their whole value = talking to people. A quiet chat kills the vibe instantly.</p>
+          <p><strong>Perfect for you:</strong> Active chatters make them look interactive, fun, and worth following.</p>
+        </div>
+        <div class="card stream-card">
+          <h3>🥈 Music & DJs</h3>
+          <p><strong>Why:</strong> They’re performing live — but without chat hype it feels like playing to an empty room.</p>
+          <p><strong>Perfect for you:</strong> Engagement makes the stream feel like a concert or party, attracting more real viewers.</p>
+        </div>
+        <div class="card stream-card">
+          <h3>🥉 Roleplay (GTA RP, D&D, etc.)</h3>
+          <p><strong>Why:</strong> RP thrives on immersion. If chat is dead, the performance feels flat.</p>
+          <p><strong>Perfect for you:</strong> Chatters can act like part of the “world,” fueling immersion and keeping the story alive.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="industries">
+      <h2>Industries We Also Serve</h2>
+      <p class="sub">Beyond streaming, we extend trust-driven engagement to multiple sectors.</p>
+      <div class="grid cards">
+        <div class="card"><h3>Prop Firms & Trading</h3><p>24/7 chat flow, payout transparency, Trustpilot credibility.</p></div>
+        <div class="card"><h3>Web3 & Crypto</h3><p>NFT/DeFi Discord growth, multilingual moderation, hype building.</p></div>
+        <div class="card"><h3>SaaS & Startups</h3><p>G2/Capterra reviews, user communities, Product Hunt momentum.</p></div>
+        <div class="card"><h3>Online Education</h3><p>Student engagement, success stories, positive culture.</p></div>
+        <div class="card"><h3>Gaming & Esports</h3><p>Launch hype, gamer trust, sustained community energy.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="proof">
+      <h2>Proof of Work</h2>
+      <p class="sub">Selected projects (full list available upon request; confidentiality maintained).</p>
+      <div class="grid cards">
+        <div class="card">
+          <span class="badge">Streaming</span>
+          <h3 style="margin-top:10px">Twitch & Kick Streamers</h3>
+          <p>Active chat flow, hype cycles, live moderation.</p>
+        </div>
+        <div class="card">
+          <span class="badge">Prop Firms</span>
+          <h3 style="margin-top:10px">FundedNext • NextStep • Syndicate Funding</h3>
+          <p>Round-the-clock moderation, payout posts, review boosts.</p>
+        </div>
+        <div class="card">
+          <span class="badge">Web3</span>
+          <h3 style="margin-top:10px">Nirvanan NFT (KR) • DeFi (anon)</h3>
+          <p>Hype cycle support, bilingual community ops, security-first mod rules.</p>
+        </div>
+        <div class="card">
+          <span class="badge">Live Portfolio</span>
+          <h3 style="margin-top:10px"><a href="https://community-core.vercel.app/" target="_blank" rel="noopener" style="text-decoration:underline">View ongoing proof →</a></h3>
+          <p>Snapshots and references available on request.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <h2>What We Deliver</h2>
+      <p class="sub">Outcomes that compound credibility and retention.</p>
+      <div class="grid cards">
+        <div class="card"><h3>Engagement</h3><p>Lively, natural chat flow across time zones.</p></div>
+        <div class="card"><h3>Reputation</h3><p>Review programs on Trustpilot, G2, Capterra.</p></div>
+        <div class="card"><h3>Trust</h3><p>Payout & testimonial workflows that showcase transparency.</p></div>
+        <div class="card"><h3>Outcome</h3><p>More credibility → stronger retention → sustained growth.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <h2>Contact & Booking</h2>
+      <p class="sub">Choose the path that’s easiest for you.</p>
+      <div class="contact">
+        <a href="https://calendly.com/xsyrfelix/new-meeting" target="_blank" rel="noopener">📅 Book a Call (Calendly)</a>
+        <a href="mailto:xsyrfelix@gmail.com">✉️ Email: xsyrfelix@gmail.com</a>
+        <a href="https://x.com/1EngageAgency" target="_blank" rel="noopener">𝕏 Follow: @1EngageAgency</a>
+      </div>
+    </section>
+
+    <div class="footer">© 2025 Community Core. All rights reserved.</div>
+  </div>
+</body>
+</html>
